@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'ListViewPage.dart';
+import 'FlamePage.dart';
 
 void main() {
-  runApp(MyListApp());
+  //runApp(MyListApp());
+  final game = MyGame();
+  runApp(game.widget);
 }
 
 class MyApp extends StatelessWidget {
