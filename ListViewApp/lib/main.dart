@@ -1,11 +1,24 @@
+import 'package:flame/components/mixins/has_game_ref.dart';
+import 'package:flame/components/mixins/resizable.dart';
+import 'package:flame/components/sprite_component.dart';
+import 'package:flame/components/sprite_animation_component.dart';
+import 'package:flame/extensions/vector2.dart';
+import 'package:flame/flame.dart';
+import 'package:flame/game.dart';
+import 'package:flame/gestures.dart';
+import 'package:flame/palette.dart';
+import 'package:flame/text_config.dart';
+import 'package:flame_audio/flame_audio.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'GameWidget.dart';
 import 'ListViewPage.dart';
-import 'FlamePage.dart';
 
-void main() {
-  //runApp(MyListApp());
-  final game = MyGame();
-  runApp(game.widget);
+void main() async {
+  await Flame.init();
+  await Flame.images.loadAll(['dog.png', 'square.png']);
+
+  runApp(ListPage());
 }
 
 class MyApp extends StatelessWidget {

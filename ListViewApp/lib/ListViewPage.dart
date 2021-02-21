@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'GameWidget.dart';
 
 // Product
 class Product {
@@ -16,32 +17,24 @@ final List<Product> listItems = new List<Product>.generate(500, (i) {
   );
 });
 
-class MyListApp extends StatelessWidget {
+class ListPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
           title: Text("ListApp"),
         ),
-        body: ListHomePage(),
+        body: ListPageBody(),
       ),
     );
   }
 }
 
-class ListHomePage extends StatelessWidget {
+class ListPageBody extends StatelessWidget {
+  final game = MyGame();
   Widget build(BuildContext context) {
-    return Center(
-      child: ListView.builder(
-        itemCount: listItems.length,
-        itemBuilder: (context, index) {
-          return ListTile(
-            leading: Icon(Icons.event_seat),
-            title: Text('${listItems[index].name}'),
-            subtitle: Text('${listItems[index].price}'),
-          );
-        },
-      ),
-    );
+    return game.widget;
+    //return Text("data");
+    //return Image.asset('assets/images/dog.png');
   }
 }
