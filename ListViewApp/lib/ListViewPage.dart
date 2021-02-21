@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'GameWidget.dart';
+import 'package:flame/game.dart';
 
 // Product
 class Product {
@@ -31,9 +32,12 @@ class ListPage extends StatelessWidget {
 }
 
 class ListPageBody extends StatelessWidget {
-  final game = MyGame();
+  //final game = MyGame();
+
   Widget build(BuildContext context) {
-    return game.widget;
+    return GameWidget(
+      game: MyGame(),
+    );
     //return Text("data");
     //return Image.asset('assets/images/dog.png');
   }

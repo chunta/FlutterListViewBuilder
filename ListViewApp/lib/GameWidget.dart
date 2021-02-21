@@ -1,10 +1,8 @@
 import 'dart:math';
 import 'dart:ui';
-import 'package:flame/components/sprite_component.dart';
-import 'package:flame/extensions/vector2.dart';
 import 'package:flame/game.dart';
+import 'package:flame/components.dart';
 import 'package:flame/palette.dart';
-import 'package:flame/text_config.dart';
 import 'package:flutter/material.dart';
 import 'package:flame/flame.dart';
 import 'package:flame/gestures.dart';
@@ -19,21 +17,21 @@ final textConfig = TextConfig(
 const CRATE_SIZE = 114.0;
 
 class Crate extends SpriteComponent {
-  var canvasSize;
-  Crate()
+  Vector2 initPos;
+  Crate(this.initPos)
       : super.fromImage(
           Vector2.all(CRATE_SIZE),
           Flame.images.fromCache('square.png'),
         ) {
-    x = 0.0;
-    y = 0.0;
-    print(canvasSize);
+    x = initPos.x;
+    y = initPos.y;
+    print(initPos);
   }
 }
 
 class MyGame extends BaseGame with TapDetector {
   MyGame() {
-    add(Crate());
+    add(Crate(Vector2(0.0, 0.0)));
   }
 
   @override
@@ -60,6 +58,6 @@ class MyGame extends BaseGame with TapDetector {
   @override
   void onTapDown(TapDownDetails details) {
     print('tap');
-    //add(Crate(Vector2.all(20)));
+    add(Crate(Vector2(details.localPosition.dx, details.localPosition.dy)));
   }
 }

@@ -23,9 +23,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  flame: 1.0.0-rc1
+  flame: ^1.0.0-rc6
   flame_audio: 0.1.0-rc1
-  #flame_forge2d: ^0.6.1
+  forge2d: ^0.6.3
 
 
   # The following adds the Cupertino Icons font to your application.
