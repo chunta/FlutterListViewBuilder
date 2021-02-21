@@ -48,7 +48,7 @@ class MyGame extends BaseGame with TapDetector {
     super.render(canvas);
 
     final text = points.toString();
-    textConfig.render(canvas, text, Vector2(10.0, 100.0));
+    textConfig.render(canvas, text, Vector2(10, 100));
   }
 
   @override
