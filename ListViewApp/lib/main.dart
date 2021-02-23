@@ -10,7 +10,7 @@ import 'ListViewPage.dart';
 
 void main() async {
   await Flame.init();
-  await Flame.images.loadAll(['dog.png', 'square.png']);
+  await Flame.images.loadAll(['dog.png', 'square.png', 'chopper.png']);
 
   runApp(ListPage());
 }

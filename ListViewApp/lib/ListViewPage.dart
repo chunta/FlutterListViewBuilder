@@ -32,8 +32,6 @@ class ListPage extends StatelessWidget {
 }
 
 class ListPageBody extends StatelessWidget {
-  //final game = MyGame();
-
   Widget build(BuildContext context) {
     return GameWidget(
       game: MyGame(),
